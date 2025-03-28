@@ -16,6 +16,24 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import pixelalchemy.composeapp.generated.resources.Res
 import pixelalchemy.composeapp.generated.resources.compose_multiplatform
 
+import com.mikewilcome.pixelalchemy.application.GameController
+import com.mikewilcome.pixelalchemy.application.PlaceElementUseCase
+import com.mikewilcome.pixelalchemy.application.ApplyGravityUseCase
+import com.mikewilcome.pixelalchemy.application.ApplyInteractionUseCase
+import com.mikewilcome.pixelalchemy.application.ClearGridUseCase
+
+val placeElementUseCase = PlaceElementUseCase()
+val applyGravityUseCase = ApplyGravityUseCase()
+val applyInteractionUseCase = ApplyInteractionUseCase()
+val clearGridUseCase = ClearGridUseCase()
+
+val gameController = GameController(
+    placeElementUseCase = placeElementUseCase,
+    applyGravityUseCase = applyGravityUseCase,
+    applyInteractionUseCase = applyInteractionUseCase,
+    clearGridUseCase = clearGridUseCase
+)
+
 @Composable
 @Preview
 fun App() {
